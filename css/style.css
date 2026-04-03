@@ -1,0 +1,9 @@
+/* Stiluri personalizate pentru PetAdopt */
+body {
+    padding-top: 80px; /* Previne suprapunerea navbar-ului peste continut */
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: #ff8c00 !important; /* Un portocaliu sugestiv pentru animale */
+}
