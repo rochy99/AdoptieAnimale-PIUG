@@ -69,5 +69,14 @@ body {
     transform: translateY(-2px);
 }
 
-/* Secțiuni cu fundal colorat (ex: Contact sau Info) */
-.
+/* --- Stil personalizat pentru butonul de Cautare --- */
+.btn-outline-success {
+    background-color: #ACAF50 !important; /* Verdele cerut */
+    color: #000000 !important;            /* Text negru */
+    border-color: #ACAF50 !important;      /* Bordura asortata */
+}
+
+.btn-outline-success:hover {
+    background-color: #949745 !important; /* Un verde usor mai inchis la hover */
+    color: #000000 !important;
+}
