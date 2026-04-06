@@ -4,14 +4,16 @@
 :root {
     /* Paleta de culori oficială */
     --color-primary-green: #ACAF50;
+    --color-primary-hover: #949745; /* Verde închis pentru interacțiuni */
     --color-secondary-green: #81C784;
-    --color-accent-orange: #FFB74D;  /* Portocaliul PetAdopt */
+    --color-accent-orange: #FFB74D;
     --color-accent-pink: #F1BEE9;
     
     /* Culori Neutre și UI */
     --color-dark-text: #2c3e50;
     --color-light-bg: #f8f9fa;
     --color-white: #ffffff;
+    --color-black: #000000;
     --transition-speed: 0.3s;
 }
 
@@ -29,13 +31,13 @@ body {
 /* ==========================================================================
    3. NAVBAR (Navigație)
    ========================================================================== */
-/* Schimbăm fundalul bării de sus în Portocaliul de brand */
+/* Fundalul bării de sus */
 .navbar.bg-dark {
     background-color: var(--color-accent-orange) !important;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-/* Stilul pentru Logo (PetAdopt) */
+/* Stilul pentru Logo */
 .navbar-brand {
     font-weight: bold;
     font-size: 1.5rem;
@@ -43,40 +45,77 @@ body {
     letter-spacing: 1px;
 }
 
-/* Link-urile din meniu (Home, Câini, Pisici) */
-.navbar-dark .navbar-nav .nav-link {
-    color: var(--color-dark-text) !important;
-    font-weight: 500;
-    transition: color var(--transition-speed);
+/* --- Stil forțat pentru butonul de Căutare din Navbar --- */
+.navbar form button {
+    background-color: #ACAF50 !important; /* Verdele cerut pentru "căsuța" butonului */
+    color: #000000 !important;            /* Textul "Cauta" va fi negru */
+    border-color: #ACAF50 !important;     /* Eliminăm bordura implicită */
+    font-weight: 600 !important;          /* Facem textul puțin mai gros ca să se vadă bine */
+    transition: all 0.3s ease;
 }
 
-.navbar-dark .navbar-nav .nav-link:hover {
-    color: var(--color-white) !important;
+/* Efectul când pui mouse-ul pe buton */
+.navbar form button:hover {
+    background-color: #949745 !important; /* Un verde puțin mai închis */
+    color: #000000 !important;
+    border-color: #949745 !important;
 }
 
 /* ==========================================================================
-   4. COMPONENTE (Butoane și Carduri)
+   4. COMPONENTE (Butoane)
    ========================================================================== */
-/* Butonul principal de acțiune (ex: Adoptă) */
+/* Butonul principal de acțiune */
 .btn-primary {
     background-color: var(--color-primary-green) !important;
     border-color: var(--color-primary-green) !important;
-    transition: transform var(--transition-speed);
+    transition: transform var(--transition-speed), background-color var(--transition-speed);
 }
 
 .btn-primary:hover {
     background-color: var(--color-secondary-green) !important;
+    border-color: var(--color-secondary-green) !important;
     transform: translateY(-2px);
 }
 
-/* --- Stil personalizat pentru butonul de Cautare --- */
+/* Butonul de Căutare din Navbar */
 .btn-outline-success {
-    background-color: #ACAF50 !important; /* Verdele cerut */
-    color: #000000 !important;            /* Text negru */
-    border-color: #ACAF50 !important;      /* Bordura asortata */
+    background-color: var(--color-primary-green) !important;
+    color: var(--color-black) !important;
+    border-color: var(--color-primary-green) !important;
+    font-weight: 500;
+    transition: all var(--transition-speed);
 }
 
 .btn-outline-success:hover {
-    background-color: #949745 !important; /* Un verde usor mai inchis la hover */
-    color: #000000 !important;
+    background-color: var(--color-primary-hover) !important;
+    color: var(--color-black) !important;
+    border-color: var(--color-primary-hover) !important;
+}
+
+/* ==========================================================================
+   5. TABELUL DE COMPONENTE (Animale)
+   ========================================================================== */
+.table {
+    background-color: var(--color-white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.table thead {
+    background-color: var(--color-primary-green);
+    color: var(--color-white);
+}
+
+/* ==========================================================================
+   6. RESPONSIVITATE (Ajustări Mobile)
+   ========================================================================== */
+@media (max-width: 768px) {
+    body {
+        padding-top: 70px;
+    }
+    
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
 }
