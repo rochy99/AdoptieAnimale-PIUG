@@ -1,9 +1,26 @@
-/* Stiluri personalizate pentru PetAdopt */
-body {
-    padding-top: 80px; /* Previne suprapunerea navbar-ului peste continut */
+/* 1. DEFINIREA VARIABILELOR (Paleta lui Paul) */
+:root {
+    --color-green-main: #ACAF50;
+    --color-green-light: #81C784;
+    --color-orange-warm: #FFB74D;
+    --color-pink-soft: #F1BEE9;
+    --color-dark: #343a40;
 }
 
+/* 2. STILURI DE BAZĂ */
+body {
+    padding-top: 80px; /* Păstrăm padding-ul tău pentru navbar-ul fix */
+    background-color: #fcfcfc; /* Un fundal aproape alb, curat */
+}
+
+/* 3. ACTUALIZARE NAVBAR (Folosim noua culoare) */
 .navbar-brand {
     font-weight: bold;
-    color: #ff8c00 !important; /* Un portocaliu sugestiv pentru animale */
+    /* Înlocuim vechiul portocaliu cu cel din paleta oficială (#FFB74D) */
+    color: var(--color-orange-warm) !important; 
+}
+
+/* Exemplu: Schimbăm fundalul navbar-ului din negru în verdele principal */
+.navbar.bg-dark {
+    background-color: var(--color-green-main) !important;
 }
