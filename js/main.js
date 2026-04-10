@@ -1,3 +1,4 @@
+alert('JavaScript este activ!');
 document.addEventListener('DOMContentLoaded', function() {
     // 1. Preluăm elementele din DOM
     const searchInput = document.getElementById('searchInput');
