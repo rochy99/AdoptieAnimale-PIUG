@@ -1,15 +1,19 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // 1. Preluăm elementele din DOM
     const searchInput = document.getElementById('searchInput');
     const searchButton = document.getElementById('searchButton');
     const tableBody = document.getElementById('petTable');
 
-    // Funcția principală de filtrare
+    // 2. Funcția principală de filtrare
     function performSearch() {
         const query = searchInput.value.toLowerCase().trim();
         const currentPage = window.location.pathname;
 
         // --- LOGICA PENTRU PAGINA HOME ---
         if (currentPage.includes('index.html') || currentPage.endsWith('/')) {
+            // Dacă e gol, nu facem nimic
+            if (query === "") return; 
+
             if (query.includes('caine') || query.includes('cățel')) {
                 window.location.href = 'caini.html';
             } else if (query.includes('pisica') || query.includes('mâță')) {
@@ -25,29 +29,32 @@ document.addEventListener('DOMContentLoaded', function() {
             const rows = tableBody.getElementsByTagName('tr');
 
             for (let i = 0; i < rows.length; i++) {
-                // Luăm tot textul din rând (Nume, Vârstă, Rasă, etc.)
                 const rowText = rows[i].textContent.toLowerCase();
                 
-                // Dacă query-ul se regăsește oriunde în textul rândului
                 if (rowText.includes(query)) {
-                    rows[i].style.display = ""; // Afișează
+                    rows[i].style.display = ""; 
                 } else {
-                    rows[i].style.display = "none"; // Ascunde
+                    rows[i].style.display = "none"; 
                 }
             }
         }
     }
 
-    // Ascultă pentru tasta ENTER
-    searchInput.addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
-            e.preventDefault();
-            performSearch();
-        }
-    });
+    // 3. Ascultă pentru tasta ENTER (Doar dacă există bara de căutare)
+    if (searchInput) {
+        searchInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault(); // Oprește refresh-ul paginii
+                performSearch();
+            }
+        });
+    }
 
-    // Ascultă pentru click pe butonul "Cauta"
+    // 4. Ascultă pentru click pe butonul "Cauta" (Doar dacă există butonul)
     if (searchButton) {
-        searchButton.addEventListener('click', performSearch);
+        searchButton.addEventListener('click', function(e) {
+            e.preventDefault(); // Oprește refresh-ul paginii
+            performSearch();
+        });
     }
 });
