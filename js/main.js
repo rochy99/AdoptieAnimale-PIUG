@@ -2,57 +2,52 @@ document.addEventListener('DOMContentLoaded', function() {
     const searchInput = document.getElementById('searchInput');
     const searchButton = document.getElementById('searchButton');
     const tableBody = document.getElementById('petTable');
+    const resultsCounter = document.getElementById('resultsCounter');
 
-    function performSearch() {
+    function performSearch(event) {
+        if (event) event.preventDefault();
+
         const query = searchInput.value.toLowerCase().trim();
-        const fullUrl = window.location.href.toLowerCase();
-
-        // 1. LOGICA PENTRU PAGINA HOME
-        // Verificăm dacă suntem pe prima pagină (index)
-        if (fullUrl.includes('index.html') || fullUrl.endsWith('/') || !fullUrl.includes('.html')) {
-            if (query === "") return;
-
-            if (query.includes('cain') || query.includes('catel')) {
-                window.location.href = 'caini.html';
-            } else if (query.includes('pisic') || query.includes('mata') || query.includes('mâț')) {
-                window.location.href = 'pisici.html';
-            } else {
-                alert('Te rugăm să cauți "caine" sau "pisica" pentru a vedea listele!');
-            }
-            return;
-        }
-
-        // 2. LOGICA PENTRU FILTRARE (În paginile cu tabel)
+        
+        // --- LOGICA PENTRU PAGINI CU TABEL ---
         if (tableBody) {
             const rows = tableBody.getElementsByTagName('tr');
-            let found = false;
+            let count = 0;
 
             for (let i = 0; i < rows.length; i++) {
                 const rowText = rows[i].textContent.toLowerCase();
                 if (rowText.includes(query)) {
                     rows[i].style.display = ""; 
-                    found = true;
+                    count++; // Numărăm rândul dacă este vizibil
                 } else {
                     rows[i].style.display = "none"; 
                 }
             }
+
+            // Actualizăm textul contorului
+            if (query === "") {
+                resultsCounter.textContent = ""; // Ascundem contorul dacă nu căutăm nimic
+            } else {
+                resultsCounter.textContent = `Am găsit ${count} ${count === 1 ? 'rezultat' : 'rezultate'}.`;
+            }
+        } 
+        // --- LOGICA PENTRU HOME ---
+        else {
+            if (query === "") return;
+            if (query.includes('cain') || query.includes('catel')) {
+                window.location.href = 'caini.html';
+            } else if (query.includes('pisic') || query.includes('mat')) {
+                window.location.href = 'pisici.html';
+            } else {
+                alert('Te rugăm să cauți "caine" sau "pisica"!');
+            }
         }
     }
 
-    // Event Listeners cu prevenirea erorilor de browser
-    if (searchButton) {
-        searchButton.addEventListener('click', function(e) {
-            e.preventDefault();
-            performSearch();
-        });
+    // Filtrare în timp real pe măsură ce scrii (fără să mai apeși Enter)
+    if (searchInput) {
+        searchInput.addEventListener('input', performSearch);
     }
 
-    if (searchInput) {
-        searchInput.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                performSearch();
-            }
-        });
-    }
+    if (searchButton) searchButton.addEventListener('click', performSearch);
 });

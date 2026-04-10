@@ -22,9 +22,9 @@
                     <li class="nav-item"><a class="nav-link" href="pisici.html">Pisici</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
                 </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Caută un câine...">
-                    <button class="btn" type="submit">Cauta</button>
+                <form class="d-flex" role="search">
+                    <input id="searchInput" class="form-control me-2" type="search" placeholder="Caută un câine..." aria-label="Search">
+                    <button id="searchButton" class="btn btn-outline-success" type="button">Cauta</button>
                 </form>
             </div>
         </div>
@@ -35,7 +35,11 @@
             <h2 class="display-6 fw-bold">Câini disponibili pentru adopție</h2>
             <p class="text-muted">Găsește un partener loial de plimbări și un prieten pe viață.</p>
         </div>
-
+        
+        <div class="container mt-3">
+        <p id="resultsCounter" class="text-muted fw-bold"></p>
+        </div>
+        
         <div class="table-responsive">
             <table class="table table-hover align-middle shadow-sm bg-white rounded">
                 <thead class="table-light">
@@ -49,7 +53,7 @@
                         <th>Acțiune</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="petTable">
                     <tr>
                         <td><img src="assets/img/dogs/dog-max.jpg" alt="Câinele Max" width="100" class="rounded"></td>
                         <td>Max</td>
@@ -57,7 +61,17 @@
                         <td>M</td>
                         <td>Metis</td>
                         <td>Un pui curios și foarte afectuos, Max adoră să fie în preajma oamenilor. Este jucăuș, dar și atent la tot ce se întâmplă în jurul lui. Ideal pentru o familie care își dorește un companion loial încă de mic.</td>
-                        <td><button class="btn btn-success btn-sm">Adoptă</button></td>
+                        <td>
+                            <div class="d-flex gap-2">
+                            <button class="btn btn-success btn-sm">Adoptă</button>
+                            <button class="btn btn-outline-danger btn-sm fav-btn" 
+                                    data-name="Max" 
+                                    data-img="assets/img/dogs/dog-max.jpg" 
+                                    data-race="Metis">
+                                ❤️
+                            </button>
+                            </div>
+                        </td>
                     </tr>
                     <tr>
                         <td><img src="assets/img/dogs/dog-kira.jpg" alt="Cățelușa Kira" width="100" class="rounded"></td>
@@ -66,7 +80,17 @@
                         <td>F</td>
                         <td>Podenco mix</td>
                         <td>Kira este un câine elegant și inteligent, cu o energie calmă. Este atentă și ușor rezervată la început, dar devine rapid foarte atașată de stăpân. Perfectă pentru persoane liniștite.</td>
-                        <td><button class="btn btn-success btn-sm">Adoptă</button></td>
+                        <td>
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-success btn-sm">Adoptă</button>
+                                <button class="btn btn-outline-danger btn-sm fav-btn" 
+                                        data-name="Kira" 
+                                        data-img="assets/img/dogs/dog-kira.jpg" 
+                                        data-race="Podenco mix">
+                                    ❤️
+                                </button>
+                            </div>
+                        </td>
                     </tr>
                     <tr>
                         <td><img src="assets/img/dogs/dog-tobi.jpg" alt="Câinele Tobi" width="100" class="rounded"></td>
@@ -75,7 +99,17 @@
                         <td>M</td>
                         <td>Jack Russell Terrier mix</td>
                         <td>Tobi este un mic explorator plin de energie. Extrem de jucăuș și curios, iubește să descopere lucruri noi și să interacționeze cu oamenii. Ideal pentru cineva activ.</td>
-                        <td><button class="btn btn-success btn-sm">Adoptă</button></td>
+                        <td>
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-success btn-sm">Adoptă</button>
+                                <button class="btn btn-outline-danger btn-sm fav-btn" 
+                                        data-name="Tobi" 
+                                        data-img="assets/img/dogs/dog-tobi.jpg" 
+                                        data-race="Jack Russell Terrier mix">
+                                    ❤️
+                                </button>
+                            </div>
+                        </td>
                     </tr>
                     <tr>
                         <td><img src="assets/img/dogs/dog-bruno.jpg" alt="Câinele Bruno" width="100" class="rounded"></td>
@@ -84,7 +118,17 @@
                         <td>M</td>
                         <td>Labrador Retriever mix</td>
                         <td>Bruno este un câine calm și echilibrat, cu un temperament foarte prietenos. Se adaptează ușor și este foarte loial. Potrivit atât pentru familii, cât și pentru persoane singure.</td>
-                        <td><button class="btn btn-success btn-sm">Adoptă</button></td>
+                        <td>
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-success btn-sm">Adoptă</button>
+                                <button class="btn btn-outline-danger btn-sm fav-btn" 
+                                        data-name="Bruno" 
+                                        data-img="assets/img/dogs/dog-bruno.jpg" 
+                                        data-race="Labrador Retriever mix">
+                                ❤️
+                                </button>
+                            </div>
+                        </td>
                     </tr>
                     <tr>
                         <td><img src="assets/img/dogs/dog-milo.jpg" alt="Câinele Milo" width="100" class="rounded"></td>
@@ -93,7 +137,17 @@
                         <td>M</td>
                         <td>American Staffordshire Terrier mix</td>
                         <td>Milo este un pui energic și foarte atașat de oameni. Deși pare serios, este extrem de iubitor și jucăuș. Cu puțină dresare, poate deveni un companion excelent.</td>
-                        <td><button class="btn btn-success btn-sm">Adoptă</button></td>
+                        <td>
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-success btn-sm">Adoptă</button>
+                                <button class="btn btn-outline-danger btn-sm fav-btn" 
+                                        data-name="Milo" 
+                                        data-img="assets/img/dogs/dog-milo.jpg" 
+                                        data-race="American Staffordshire Terrier mix">
+                                    ❤️
+                                </button>
+                            </div>
+                        </td>
                     </tr>
                 </tbody>
             </table>

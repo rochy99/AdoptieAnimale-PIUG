@@ -22,9 +22,9 @@
                     <li class="nav-item"><a class="nav-link active" href="pisici.html">Pisici</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
                 </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Caută o pisică...">
-                    <button class="btn" type="submit">Cauta</button>
+                <form class="d-flex" role="search">
+                    <input id="searchInput" class="form-control me-2" type="search" placeholder="Caută o pisică...">
+                    <button id="searchButton" class="btn btn-outline-success" type="button">Cauta</button>
                 </form>
             </div>
         </div>
@@ -34,6 +34,10 @@
         <div class="text-center mb-5">
             <h2 class="display-6 fw-bold">Pisici disponibile pentru adopție</h2>
             <p class="text-muted">Alege un companion și oferă-i o șansă la o viață mai bună.</p>
+        </div>
+
+        <div class="container mt-3">
+        <p id="resultsCounter" class="text-muted fw-bold"></p>
         </div>
 
         <div class="table-responsive">
@@ -49,7 +53,7 @@
                         <th>Acțiune</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="petTable">
                     <tr>
                         <td><img src="assets/img/cats/cat-luna.jpg" alt="Pisica Luna" width="100" class="rounded"></td>
                         <td>Luna</td>
@@ -57,7 +61,17 @@
                         <td>F</td>
                         <td>Bengal mix</td>
                         <td>Luna este o pisică elegantă și foarte atentă la tot ce se întâmplă în jur. Are un temperament curios și iubește să exploreze. Ideală pentru un mediu activ.</td>
-                        <td><button class="btn btn-success btn-sm">Adoptă</button></td>
+                        <td>
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-success btn-sm">Adoptă</button>
+                                <button class="btn btn-outline-danger btn-sm fav-btn" 
+                                        data-name="Luna" 
+                                        data-img="assets/img/cats/cat-luna.jpg" 
+                                        data-race="Bengal mix">
+                                    ❤️
+                                </button>
+                            </div>
+                        </td>
                     </tr>
                     <tr>
                         <td><img src="assets/img/cats/cat-mimi.jpg" alt="Pisica Mimi" width="100" class="rounded"></td>
@@ -66,7 +80,17 @@
                         <td>F</td>
                         <td>European Shorthair</td>
                         <td>Mimi este o pisicuță mică și foarte afectuoasă. Adoră să stea în brațe și să se joace. Este perfectă pentru cineva care își dorește un companion iubitor.</td>
-                        <td><button class="btn btn-success btn-sm">Adoptă</button></td>
+                        <td>
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-success btn-sm">Adoptă</button>
+                                <button class="btn btn-outline-danger btn-sm fav-btn" 
+                                        data-name="Mimi" 
+                                        data-img="assets/img/cats/cat-mimi.jpg" 
+                                        data-race="European Shorthair">
+                                    ❤️
+                                </button>
+                            </div>
+                        </td>
                     </tr>
                     <tr>
                         <td><img src="assets/img/cats/cat-oreo.jpg" alt="Motan Oreo" width="100" class="rounded"></td>
@@ -75,7 +99,17 @@
                         <td>M</td>
                         <td>Tuxedo cat</td>
                         <td>Oreo este un motan jucăuș și sociabil, cu o personalitate foarte prietenoasă. Se adaptează ușor și iubește interacțiunea cu oamenii.</td>
-                        <td><button class="btn btn-success btn-sm">Adoptă</button></td>
+                        <td>
+                            <div class="d-flex gap-2">
+                            <button class="btn btn-success btn-sm">Adoptă</button>
+                            <button class="btn btn-outline-danger btn-sm fav-btn" 
+                                    data-name="Oreo" 
+                                    data-img="assets/img/cats/cat-oreo.jpg" 
+                                    data-race="Tuxedo cat">
+                                ❤️
+                            </button>
+                            </div>
+                        </td>
                     </tr>
                     <tr>
                         <td><img src="assets/img/cats/cat-simba.jpg" alt="Motan Simba" width="100" class="rounded"></td>
@@ -84,7 +118,17 @@
                         <td>M</td>
                         <td>Domestic Longhair</td>
                         <td>Simba este un motan liniștit și relaxat, care adoră să doarmă și să se bucure de confort. Ideal pentru un mediu calm și stabil.</td>
-                        <td><button class="btn btn-success btn-sm">Adoptă</button></td>
+                        <td>
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-success btn-sm">Adoptă</button>
+                                <button class="btn btn-outline-danger btn-sm fav-btn" 
+                                        data-name="Simba" 
+                                        data-img="assets/img/cats/cat-simba.jpg" 
+                                        data-race="Domestic Longhair">
+                                    ❤️
+                                </button>
+                            </div>
+                        </td>
                     </tr>
                     <tr>
                         <td><img src="assets/img/cats/cat-snow.jpg" alt="Pisica Snow" width="100" class="rounded"></td>
@@ -93,7 +137,17 @@
                         <td>F</td>
                         <td>Persian mix</td>
                         <td>Snow este o pisică calmă și elegantă, cu un aer regal. Preferă liniștea și confortul, fiind perfectă pentru cineva care caută un companion relaxat.</td>
-                        <td><button class="btn btn-success btn-sm">Adoptă</button></td>
+                        <td>
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-success btn-sm">Adoptă</button>
+                                <button class="btn btn-outline-danger btn-sm fav-btn" 
+                                        data-name="Snow" 
+                                        data-img="assets/img/cats/cat-snow.jpg" 
+                                        data-race="Persian mix">
+                                    ❤️
+                                </button>
+                            </div>
+                        </td>
                     </tr>
                 </tbody>
             </table>
