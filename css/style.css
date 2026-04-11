@@ -119,3 +119,66 @@ body {
         font-size: 1.2rem;
     }
 }
+
+/* Fundal general și font */
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Stil pentru Tabelul de Favorite */
+.table-responsive {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.table thead th {
+    border-top: none;
+    color: #495057;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+/* Efect de hover pe rânduri */
+.table-hover tbody tr:hover {
+    background-color: #f1f3f5;
+    transition: 0.3s;
+}
+
+/* Stil Imagini Animale */
+.table img {
+    object-fit: cover;
+    border: 2px solid #e9ecef;
+    transition: transform 0.3s;
+}
+
+.table img:hover {
+    transform: scale(1.1);
+}
+
+/* Badge-ul pentru Rasă */
+.badge {
+    padding: 8px 12px;
+    font-weight: 500;
+    border-radius: 20px;
+}
+
+/* Butonul de ștergere */
+.btn-danger.btn-sm {
+    border-radius: 20px;
+    padding: 5px 15px;
+}
+
+/* Mesajul când nu sunt favorite */
+#noFavoritesMsg {
+    border: none;
+    border-radius: 15px;
+    padding: 40px;
+    background-color: #e7f5ff;
+    color: #1971c2;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
