@@ -9,30 +9,50 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">PetAdopt</a>
-            <div class="collapse navbar-collapse">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="caini.html">Câini</a></li>
-                    <li class="nav-item"><a class="nav-link" href="pisici.html">Pisici</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="favorite.html">Favorite</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-                </ul>
+<nav class="navbar navbar-expand-lg fixed-top custom-navbar">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html">
+            PetAdopt
+            <img src="assets/img/logo.png" class="logo">
+        </a>
+
+        <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto ms-lg-4">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="caini.html">Câini</a></li>
+                <li class="nav-item"><a class="nav-link" href="pisici.html">Pisici</a></li>
+                <li class="nav-item"><a class="nav-link active" href="favorite.html">Favorite</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<main class="container main-content">
+
+    <section class="hero-section text-center">
+        <div class="hero-card mx-auto">
+            <h1 class="display-6 fw-bold">Animalele mele favorite</h1>
+            <p class="lead mt-3">
+                Aici găsești animalele pe care le-ai salvat pentru mai târziu.
+            </p>
+
+            <div class="mt-4">
+                <button class="btn hero-btn-secondary" onclick="clearAllFavorites()">
+                    Golește toată lista
+                </button>
             </div>
         </div>
-    </nav>
+    </section>
 
-    <main class="container" style="margin-top: 100px;">
-        <div class="d-flex justify-content-between align-items-center mb-4">
-            <h2>Animalele mele favorite</h2>
-            <button class="btn btn-warning" onclick="clearAllFavorites()">Golește toată lista</button>
-        </div>
-
+    <section class="content-card p-4 mt-4">
         <div class="table-responsive">
-            <table class="table table-hover align-middle">
-                <thead class="table-light">
+            <table class="table table-hover align-middle pet-table">
+                <thead>
                     <tr>
                         <th>Poză</th>
                         <th>Nume</th>
@@ -41,16 +61,27 @@
                     </tr>
                 </thead>
                 <tbody id="favoritesTableBody">
-                    </tbody>
+                </tbody>
             </table>
         </div>
 
-        <div id="noFavoritesMsg" class="alert alert-info d-none text-center">
-            Nu ai adăugat încă niciun animal la favorite. 
-            <br><a href="index.html" class="alert-link">Începe căutarea aici!</a>
+        <div id="noFavoritesMsg" class="alert alert-info d-none text-center mt-4">
+            Nu ai adăugat încă niciun animal la favorite.
+            <br>
+            <a href="index.html" class="alert-link">Începe căutarea aici!</a>
         </div>
-    </main>
+    </section>
 
-    <script src="js/favorites.js"></script>
+</main>
+
+<footer class="site-footer text-center py-4 mt-5">
+    <div class="container">
+        <p class="mb-0">© 2026 PetAdopt — Oferim o nouă șansă prietenilor fără casă.</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/favorites.js"></script>
+
 </body>
 </html>
