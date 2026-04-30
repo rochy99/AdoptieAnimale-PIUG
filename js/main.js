@@ -100,3 +100,62 @@ function addToFavorites(pet) {
         alert(`${pet.name} este deja în lista ta de favorite.`);
     }
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    // 1. Lista completă cu datele celor 20 de animale (Câini + Pisici)
+    const allPets = [
+        { name: "Max", img: "assets/img/dogs/dog-max.jpg", race: "Metis" },
+        { name: "Kira", img: "assets/img/dogs/dog-kira.jpg", race: "Podenco mix" },
+        { name: "Milo", img: "assets/img/dogs/dog-milo.jpg", race: "Amstaff mix" },
+        { name: "Zara", img: "assets/img/cats/cat-zara.jpg", race: "European Shorthair" },
+        { name: "Leo", img: "assets/img/dogs/dog-leo.jpg", race: "Pinscher mix" },
+        { name: "Luna", img: "assets/img/cats/cat-luna.jpg", race: "Bengal mix" },
+        { name: "Rex", img: "assets/img/dogs/dog-rex.jpg", race: "Terrier mix" },
+        { name: "Oreo", img: "assets/img/cats/cat-oreo.jpg", race: "Tuxedo cat" },
+        { name: "Tobi", img: "assets/img/dogs/dog-tobi.jpg", race: "Jack Russell mix" }
+        
+    ];
+
+    const carouselContainer = document.getElementById('randomPetCarousel');
+    if (!carouselContainer) return;
+
+    // 2. Amestecăm lista și tăiem primele 6
+    const shuffled = allPets.sort(() => 0.5 - Math.random());
+    const selectedPets = shuffled.slice(0, 6);
+
+    // 3. Generăm HTML-ul pentru Indicators și Inner Items
+    let indicatorsHTML = '<div class="carousel-indicators">';
+    let itemsHTML = '<div class="carousel-inner">';
+
+    selectedPets.forEach((pet, index) => {
+        const isActive = index === 0 ? 'active' : '';
+        
+        indicatorsHTML += `
+            <button type="button" data-bs-target="#randomPetCarousel" data-bs-slide-to="${index}" 
+                    class="${isActive}" aria-current="${isActive ? 'true' : 'false'}"></button>`;
+        
+        itemsHTML += `
+            <div class="carousel-item ${isActive}">
+                <img src="${pet.img}" class="d-block w-100 carousel-img" alt="${pet.name}">
+                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+                    <h5>${pet.name}</h5>
+                    <p>${pet.race}</p>
+                </div>
+            </div>`;
+    });
+
+    indicatorsHTML += '</div>';
+    itemsHTML += '</div>';
+
+    // 4. Adăugăm butoanele de control (Prev/Next)
+    const controlsHTML = `
+        <button class="carousel-control-prev" type="button" data-bs-target="#randomPetCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#randomPetCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>`;
+
+    // 5. Injectăm totul în container
+    carouselContainer.innerHTML = indicatorsHTML + itemsHTML + controlsHTML;
+});

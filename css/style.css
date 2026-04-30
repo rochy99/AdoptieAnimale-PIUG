@@ -231,3 +231,14 @@ video {
         align-items: stretch;
     }
 }
+
+.carousel-img {
+    height: 450px;       /* Ajustează înălțimea în funcție de design-ul colegului */
+    object-fit: cover;    /* Foarte important: taie marginile, nu deformează poza */
+    object-position: center;
+}
+
+#randomPetCarousel {
+    max-width: 900px;     /* Îl face să nu ocupe tot ecranul pe MacBook */
+    margin: 0 auto;       /* Îl centrează */
+}
