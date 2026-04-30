@@ -242,3 +242,49 @@ video {
     max-width: 900px;     /* Îl face să nu ocupe tot ecranul pe MacBook */
     margin: 0 auto;       /* Îl centrează */
 }
+
+.social-icon {
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+    display: inline-block;
+}
+
+.social-icon:hover {
+    transform: scale(1.2); /* Efect de mărire */
+}
+
+/* Culori oficiale la hover */
+.fb { color: #ffffff; } /* Sau #1877F2 pentru albastru Facebook */
+.fb:hover { color: #1877F2; }
+
+.ig { color: #ffffff; }
+.ig:hover { color: #E4405F; }
+
+.tt { color: #ffffff; }
+.tt:hover { color: #00f2ea; }
+
+.site-footer {
+    background-color: #333; /* Ajustează conform culorii din design-ul colegului */
+    color: white;
+}
+
+#btn-back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none; /* Ascuns implicit până la scroll */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  z-index: 1000;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#btn-back-to-top:hover {
+  transform: scale(1.1);
+}
+
+/* Fluiditate pentru scroll-ul întregii pagini */
+html {
+  scroll-behavior: smooth;
+}

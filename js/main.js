@@ -159,3 +159,25 @@ document.addEventListener('DOMContentLoaded', function() {
     // 5. Injectăm totul în container
     carouselContainer.innerHTML = indicatorsHTML + itemsHTML + controlsHTML;
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    let mybutton = document.getElementById("btn-back-to-top");
+
+    if (mybutton) {
+        window.onscroll = function () {
+            // Am mărit valoarea de la 30 la 500
+            if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        };
+
+        mybutton.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    }
+});
