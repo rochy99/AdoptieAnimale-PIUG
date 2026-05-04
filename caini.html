@@ -79,7 +79,9 @@
                         <td>Un pui curios și afectuos, perfect pentru o familie.</td>
                         <td>
                             <div class="d-flex gap-2">
-                                <button class="btn hero-btn-primary btn-sm">Adoptă</button>
+                                <button class="btn hero-btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#adoptionModal">
+                                    Adoptă
+                                </button>
                                 <button class="btn btn-outline-danger btn-sm fav-btn"
                                         data-name="Max" 
                                         data-img="assets/img/dogs/dog-max.jpg" 
@@ -97,7 +99,9 @@
                         <td>Calmă și inteligentă, ideală pentru un mediu liniștit.</td>
                         <td>
                             <div class="d-flex gap-2">
-                                <button class="btn hero-btn-primary btn-sm">Adoptă</button>
+                                <button class="btn hero-btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#adoptionModal">
+                                    Adoptă
+                                </button>
                                 <button class="btn btn-outline-danger btn-sm fav-btn"
                                         data-name="Kira" 
                                         data-img="assets/img/dogs/dog-kira.jpg" 
@@ -115,7 +119,9 @@
                         <td>Foarte energic și jucăuș, perfect pentru persoane active.</td>
                         <td>
                             <div class="d-flex gap-2">
-                                <button class="btn hero-btn-primary btn-sm">Adoptă</button>
+                                <button class="btn hero-btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#adoptionModal">
+                                    Adoptă
+                                </button>
                                 <button class="btn btn-outline-danger btn-sm fav-btn"
                                         data-name="Tobi" 
                                         data-img="assets/img/dogs/dog-tobi.jpg" 
@@ -133,7 +139,9 @@
                         <td>Prietenos și echilibrat, se adaptează ușor.</td>
                         <td>
                             <div class="d-flex gap-2">
-                                <button class="btn hero-btn-primary btn-sm">Adoptă</button>
+                                <button class="btn hero-btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#adoptionModal">
+                                    Adoptă
+                                </button>
                                 <button class="btn btn-outline-danger btn-sm fav-btn"
                                         data-name="Bruno" 
                                         data-img="assets/img/dogs/dog-bruno.jpg" 
@@ -151,7 +159,9 @@
                         <td>Energic și iubitor, cu potențial excelent.</td>
                         <td>
                             <div class="d-flex gap-2">
-                                <button class="btn hero-btn-primary btn-sm">Adoptă</button>
+                                <button class="btn hero-btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#adoptionModal">
+                                    Adoptă
+                                </button>
                                 <button class="btn btn-outline-danger btn-sm fav-btn"
                                         data-name="Milo" 
                                         data-img="assets/img/dogs/dog-milo.jpg" 
@@ -169,7 +179,9 @@
                         <td>Energic și prietenos, mereu gata de joacă și foarte loial.</td>
                         <td>
                             <div class="d-flex gap-2">
-                                <button class="btn hero-btn-primary btn-sm">Adoptă</button>
+                                <button class="btn hero-btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#adoptionModal">
+                                    Adoptă
+                                </button>
                                 <button class="btn btn-outline-danger btn-sm fav-btn" 
                                         data-name="Rex" 
                                         data-img="assets/img/dogs/dog-rex.jpg" 
@@ -187,7 +199,9 @@
                         <td>Elegantă și atentă, iubește centrul atenției; ideală pentru apartament.</td>
                         <td>
                             <div class="d-flex gap-2">
-                                <button class="btn hero-btn-primary btn-sm">Adoptă</button>
+                                <button class="btn hero-btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#adoptionModal">
+                                    Adoptă
+                                </button>
                                 <button class="btn btn-outline-danger btn-sm fav-btn" 
                                         data-name="Cara" 
                                         data-img="assets/img/dogs/dog-cara.jpg" 
@@ -205,7 +219,9 @@
                         <td>Calm, impunător și foarte blând. Un companion liniștit și protector.</td>
                         <td>
                             <div class="d-flex gap-2">
-                                <button class="btn hero-btn-primary btn-sm">Adoptă</button>
+                                <button class="btn hero-btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#adoptionModal">
+                                    Adoptă
+                                </button>
                                 <button class="btn btn-outline-danger btn-sm fav-btn" 
                                         data-name="Bobi" 
                                         data-img="assets/img/dogs/dog-bobi.jpg" 
@@ -223,7 +239,9 @@
                         <td>Curios și foarte atașat de oameni. Mic, dar plin de energie.</td>
                         <td>
                             <div class="d-flex gap-2">
-                                <button class="btn hero-btn-primary btn-sm">Adoptă</button>
+                                <button class="btn hero-btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#adoptionModal">
+                                    Adoptă
+                                </button>
                                 <button class="btn btn-outline-danger btn-sm fav-btn" 
                                         data-name="Rocky" 
                                         data-img="assets/img/dogs/dog-rocky.jpg" 
@@ -241,7 +259,9 @@
                         <td>Inteligent și foarte atent. Se potrivește bine într'o familie activă.</td>
                         <td>
                             <div class="d-flex gap-2">
-                                <button class="btn hero-btn-primary btn-sm">Adoptă</button>
+                                <button class="btn hero-btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#adoptionModal">
+                                    Adoptă
+                                </button>
                                 <button class="btn btn-outline-danger btn-sm fav-btn" 
                                         data-name="Leo" 
                                         data-img="assets/img/dogs/dog-leo.jpg" 
@@ -286,6 +306,51 @@
     <button type="button" id="btn-back-to-top" class="btn btn-danger btn-floating btn-lg shadow-lg">
     <i class="bi bi-arrow-up"></i>
     </button>
+
+<!-- Modal Formular Adopție -->
+<div class="modal fade" id="adoptionModal" tabindex="-1" aria-labelledby="adoptionModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content shadow-lg">
+      <div class="modal-header bg-dark text-white">
+        <h5 class="modal-title" id="adoptionModalLabel">Cerere pentru Adopție</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="adoptionForm" class="needs-validation" novalidate>
+          <div class="mb-3">
+            <label for="LastName" class="form-label">Nume</label>
+            <input type="text" class="form-control" id="LastName" required>
+            <div class="invalid-feedback">Te rugăm să introduci numele de familie.</div>
+          </div>
+          <div class="mb-3">
+            <label for="FirstName" class="form-label">Prenume</label>
+            <input type="text" class="form-control" id="FirstName" required>
+            <div class="invalid-feedback">Te rugăm să introduci numele tău.</div>
+          </div>
+          <div class="mb-3">
+            <label for="userEmail" class="form-label">Adresa de Email</label>
+            <input type="email" class="form-control" id="userEmail" required>
+            <div class="invalid-feedback">Introdu o adresă de email validă (trebuie să conțină @).</div>
+          </div>
+          <div class="mb-3">
+            <label for="userPhone" class="form-label">Număr de Telefon</label>
+            <input type="tel" class="form-control" id="userPhone" pattern="[0-9]{10}" placeholder="07xxxxxxxx" required>
+            <div class="invalid-feedback">Introdu un număr de telefon valid din 10 cifre.</div>
+          </div>
+          <div class="mb-3">
+            <label for="userMessage" class="form-label">De ce dorești să adopți?</label>
+            <textarea class="form-control" id="userMessage" rows="3" required></textarea>
+            <div class="invalid-feedback">Spune-ne câteva cuvinte despre tine.</div>
+          </div>
+          <div class="modal-footer px-0 pb-0">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Închide</button>
+            <button type="submit" class="btn hero-btn-primary">Trimite Cererea</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>

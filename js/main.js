@@ -181,3 +181,23 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('adoptionForm');
+
+    if (form) {
+        form.addEventListener('submit', function (event) {
+            // Verificăm dacă toate câmpurile respectă regulile (email valid, telefon de 10 cifre)
+            if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+            } else {
+                event.preventDefault(); // Oprim trimiterea reală pentru test
+                alert("Cererea a fost validată și trimisă cu succes!");
+                // Opțional: închide modalul după succes
+                bootstrap.Modal.getInstance(document.getElementById('adoptionModal')).hide();
+            }
+            form.classList.add('was-validated'); // Această clasă activează culorile verde/roșu din Bootstrap
+        }, false);
+    }
+});
