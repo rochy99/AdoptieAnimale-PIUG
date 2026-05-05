@@ -303,3 +303,23 @@ html {
     justify-content: center;
     font-size: 24px;
 }
+
+.about-portrait-custom {
+    width: 380px;           /* Redus cu 20% (de la 350px) */
+    height: 500px;          /* Redus cu 20% (de la 500px) */
+    object-fit: cover;      
+    object-position: 10% center; /* Arată mai mult din corp, tăind mai puțin de jos */
+    border-radius: 15px;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+    display: block;
+    margin: 0 auto;         /* Centrare perfectă în coloana sa */
+    transition: transform 0.3s ease; /* Mic efect vizual la hover */
+}
+
+/* Ajustare pentru ecrane mici (MacBook/Laptop) */
+@media (max-width: 1200px) {
+    .about-portrait-custom {
+        width: 300px;
+        height: 430px;
+    }
+}
