@@ -323,3 +323,12 @@ html {
         height: 430px;
     }
 }
+
+.navbar-toggler-icon {
+    /* Filtru care transformă negrul în portocaliu */
+    filter: invert(74%) sepia(50%) saturate(600%) hue-rotate(350deg) brightness(100%) contrast(105%);
+}
+
+.custom-toggler {
+    border-color: #ffb347 !important; /* Bordură portocalie */
+}
